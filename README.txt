@@ -18,8 +18,8 @@ adjustments are provided for universal compatibility across different computing 
 To verify IRAW's performance and validate its core capabilities:
 - Conduct a comparative analysis of images in 'Raw Data/' and 'Results/' to evaluate IRAW's performance metrics in 
 generating high-fidelity adversarial perturbations.
-- Ensure the 'Raw Data' folder and the watermark image files (AIR_32.png / AIR_64.png) are placed in the same root
-directory as the executable script prior to execution.
+- Ensure the 'Raw Data' folder and the watermark image file (AIR_32.png, or AIR_64.png as an alternative) are placed 
+in the same root directory as the executable script prior to execution.
 - Replace all `.cuda()` invocations with `.cpu()` if your environment is limited to CPU resources to ensure full 
 functionality.
 
@@ -29,7 +29,7 @@ functionality.
 - Operating System: Windows/Linux (compatible with mainstream distributions); macOS (CPU-only mode supported, no CUDA 
 acceleration).
 - Computational Acceleration: CUDA acceleration (default, recommended for Windows/Linux with NVIDIA GPUs); for CPU-only
-environments, replace all `.cuda()` invocations (including input.cuda()) with `.cpu()` in the script.
+environments, replace all `.cuda()` invocations (including `input.cuda()`) with `.cpu()` in the script.
 
 -----------------------------------------------------------------------------------------------------------------------------
 2. Required Packages
@@ -48,14 +48,14 @@ results and consistent performance of the IRAW framework.
 - Raw Data/: Houses the original input images utilized in the experimental evaluations of the IRAW framework.
 - Results/: Stores adversarial examples produced by IRAW (located within the automatically generated './scale_0.8/IRAW_Results' 
 folder).
-- Watermark Files: AIR_32.png / AIR_64.png (indispensable for the IRAW perturbation generation pipeline and core 
-functionality).
+- Watermark Files: AIR_32.png (primary) / AIR_64.png (alternative) (either file is indispensable for the IRAW perturbation 
+generation pipeline and core functionality).
 
 -----------------------------------------------------------------------------------------------------------------------------
 4. Data & Running Notes
 -----------------------------------------------------------------------------------------------------------------------------
-- File Paths: The code uses relative paths. PLEASE ENSURE ALL SCRIPTS AND DATA FOLDERS ARE KEPT IN THE SAME ROOT DIRECTORY 
-prior to execution to avoid path-related errors.
+- File Paths: The code uses relative paths (Windows-style `\\` by default; replace with `/` for Linux/macOS). PLEASE ENSURE 
+ALL SCRIPTS AND DATA FOLDERS ARE KEPT IN THE SAME ROOT DIRECTORY prior to execution to avoid path-related errors
 - CUDA Acceleration: Note that the code is configured for CUDA by default; please modify the script for CPU-only environments 
 as instructed above.
 - Reproducibility: Strictly adhere to the specified package versions for the precise reproduction of the algorithmic logic 
