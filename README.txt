@@ -26,9 +26,10 @@ functionality.
 -----------------------------------------------------------------------------------------------------------------------------
 1. System Requirements
 -----------------------------------------------------------------------------------------------------------------------------
-- Operating System: Windows/Linux/macOS (fully compatible with all mainstream distributions).
-- Computational Acceleration: CUDA acceleration (default, recommended); CPU-only compatible by modifying `.cuda()` calls to 
-`.cpu()` accordingly.
+- Operating System: Windows/Linux (compatible with mainstream distributions); macOS (CPU-only mode supported, no CUDA 
+acceleration).
+- Computational Acceleration: CUDA acceleration (default, recommended for Windows/Linux with NVIDIA GPUs); for CPU-only
+environments, replace all `.cuda()` invocations (including input.cuda()) with `.cpu()` in the script.
 
 -----------------------------------------------------------------------------------------------------------------------------
 2. Required Packages
@@ -45,7 +46,8 @@ results and consistent performance of the IRAW framework.
 3. File Organization
 -----------------------------------------------------------------------------------------------------------------------------
 - Raw Data/: Houses the original input images utilized in the experimental evaluations of the IRAW framework.
-- Results/: Stores adversarial examples produced by IRAW (located within the automatically generated 'scale_0.8' folder).
+- Results/: Stores adversarial examples produced by IRAW (located within the automatically generated './scale_0.8/IRAW_Results' 
+folder).
 - Watermark Files: AIR_32.png / AIR_64.png (indispensable for the IRAW perturbation generation pipeline and core 
 functionality).
 
