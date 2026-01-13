@@ -20,16 +20,16 @@ To verify IRAW's performance and validate its core capabilities:
 generating high-fidelity adversarial perturbations.
 - Ensure the 'Raw Data' folder and the watermark image file (AIR_32.png, or AIR_64.png as an alternative) are placed 
 in the same root directory as the executable script prior to execution.
-- Replace all `.cuda()` invocations with `.cpu()` if your environment is limited to CPU resources to ensure full 
-functionality.
+- For CPU-only environments, a global replacement of all device-specific .cuda() calls with .cpu() in the script is
+required to ensure full functionality.
 
 -----------------------------------------------------------------------------------------------------------------------------
 1. System Requirements
 -----------------------------------------------------------------------------------------------------------------------------
 - Operating System: Windows/Linux (compatible with mainstream distributions); macOS (CPU-only mode supported, no CUDA 
 acceleration).
-- Computational Acceleration: CUDA acceleration (default, recommended for Windows/Linux with NVIDIA GPUs); for CPU-only
-environments, replace all `.cuda()` invocations (including `input.cuda()`) with `.cpu()` in the script.
+- Computational Acceleration: CUDA acceleration (default, recommended for Windows/Linux with NVIDIA GPUs); CPU-only mode is 
+supported via device-specific API replacement as specified above.
 
 -----------------------------------------------------------------------------------------------------------------------------
 2. Required Packages
@@ -54,10 +54,11 @@ generation pipeline and core functionality).
 -----------------------------------------------------------------------------------------------------------------------------
 4. Data & Running Notes
 -----------------------------------------------------------------------------------------------------------------------------
-- File Paths: The code uses relative paths (Windows-style `\\` by default; replace with `/` for Linux/macOS). PLEASE ENSURE 
-ALL SCRIPTS AND DATA FOLDERS ARE KEPT IN THE SAME ROOT DIRECTORY prior to execution to avoid path-related errors
-- CUDA Acceleration: Note that the code is configured for CUDA by default; please modify the script for CPU-only environments 
-as instructed above.
+- File Paths: The code uses relative paths with Windows-style path separators (\\) by default. For Linux/macOS systems, a 
+global replacement of path separators with Unix-style (/) is required to avoid path-related exceptions. ALL SCRIPTS AND DATA 
+DIRECTORIES MUST BE LOCATED IN THE SAME ROOT DIRECTORY prior to execution.
+- CUDA Acceleration: The code is configured for CUDA by default; adjustments for CPU-only environments follow the 
+device-specific API replacement guidelines outlined in Section 1.
 - Reproducibility: Strictly adhere to the specified package versions for the precise reproduction of the algorithmic logic 
 and experimental results presented in our manuscript.
 
