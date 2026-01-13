@@ -10,7 +10,7 @@ Regarding the attached demonstration code, please note:
 
 1. The demo facilitates verification of the IRAW framework's capability to generate high-fidelity adversarial perturbations 
 that effectively deceive state-of-the-art deep learning architectures while preserving image fidelity.
-2. Raw images and generated adversarial examples are stored in designated folders (see details in the File Organization 
+2. Raw images and generated adversarial examples are stored in designated directories (see details in the File Organization 
 section below).
 3. The code is natively optimized for CUDA acceleration by default to ensure computational efficiency; CPU-compatible 
 adjustments are provided for universal compatibility across different computing environments.
@@ -18,7 +18,7 @@ adjustments are provided for universal compatibility across different computing 
 To verify IRAW's performance and validate its core capabilities:
 - Conduct a comparative analysis of images in 'Raw Data/' and 'Results/' to evaluate IRAW's performance metrics in 
 generating high-fidelity adversarial perturbations.
-- Ensure the 'Raw Data' folder and the watermark image file (AIR_32.png, or AIR_64.png as an alternative) are placed 
+- Ensure the 'Raw Data' directory and the watermark image file (AIR_32.png, or AIR_64.png as an alternative) are placed 
 in the same root directory as the executable script prior to execution.
 - For CPU-only environments, a global replacement of all device-specific .cuda() calls with .cpu() in the script is
 required to ensure full functionality.
@@ -47,7 +47,7 @@ results and consistent performance of the IRAW framework.
 -----------------------------------------------------------------------------------------------------------------------------
 - Raw Data/: Houses the original input images utilized in the experimental evaluations of the IRAW framework.
 - Results/: Stores adversarial examples produced by IRAW (located within the automatically generated './scale_0.8/IRAW_Results' 
-folder).
+directory).
 - Watermark Files: AIR_32.png (primary) / AIR_64.png (alternative) (either file is indispensable for the IRAW perturbation 
 generation pipeline and core functionality).
 
